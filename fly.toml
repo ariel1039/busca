@@ -1,0 +1,23 @@
+app = "busca-bot"  # Você pode mudar o nome, se quiser
+
+primary_region = "gru"  # Região GRU = São Paulo (mais rápido para o Brasil)
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  # Aqui você pode adicionar variáveis como o token do bot
+  # Exemplo:
+  TELEGRAM_TOKEN = "7515140016:AAFdcpL2qXeNir3sA2UGFeBMkrQogsjASDs"
+
+[[services]]
+  internal_port = 8080
+  protocol = "tcp"
+
+  [[services.ports]]
+    handlers = ["http"]
+    port = 80
+
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = 443
