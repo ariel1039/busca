@@ -1,0 +1,11 @@
+app = "busca-bot" # você pode mudar o nome se quiser
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  PORT = "8080"
+
+[experimental]
+  allowed_public_ports = []
+  auto_rollback = true
